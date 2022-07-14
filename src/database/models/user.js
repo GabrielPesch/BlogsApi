@@ -26,9 +26,11 @@ const attributes = {
  * @param {import('sequelize').Sequelize} sequelize 
  */
 module.exports = (sequelize) => {
-  const users = sequelize.define('User', attributes, {tableName: 'Users'});
-  users.associate = (models) => {
-    users.hasMany(models.BlogPosts, {key: 'userId', as: 'posts' })
-  }
-  return users;
+  const User = sequelize.define('User', attributes, {
+    timestamps: false,
+    tableName: 'Users'});
+  // User.associate = (models) => {
+  //   User.hasMany(models.BlogPosts, {key: 'userId', as: 'posts' })
+  // }
+  return User;
 };
