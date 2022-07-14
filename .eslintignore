@@ -2,3 +2,4 @@
 **/migrations/
 **/seeders/
 **/models/
+/mocha
