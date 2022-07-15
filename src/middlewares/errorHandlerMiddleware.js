@@ -1,12 +1,19 @@
-const errorHandlerMiddleware = (err, _req, res, _next) => {
-  switch (err.name) {
-    case 'ValidationError':
-      return res.status(err.code).json({ message: err.message });
-    case 'InvalidFieldsError':
-      return res.status(err.code).json({ message: err.message });
-    default:
-      return res.status(500).json({ message: err.message });
-  }
+const errors = {
+  ValidationError: 400,
+  InvalidFieldsError: 400,
+  UserAlreadyExistsError: 409,
+};
+
+/**
+ * @param {Error} err 
+ * @param {import('express').Request} req 
+ * @param {import('express').Response} res 
+ * @param {import('express').NextFunction} next 
+ */
+const errorHandlerMiddleware = ({ name, message }, _req, res, _next) => {
+  const status = errors[name];
+  if (!status) return res.sendStatus(500);
+  res.status(status).json({ message });
 };
 
 module.exports = errorHandlerMiddleware;
