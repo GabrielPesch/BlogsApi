@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "7c335e41-9959-455a-950d-72315acb8c88",
+    "colName": "Login",
+    "created": "2022-07-16T02:24:30.214Z",
+    "sortNum": 10000,
+    "folders": []
+  },
+  {
+    "_id": "f714cd78-d2ab-4477-8bb1-06b935d4502e",
+    "colName": "User",
+    "created": "2022-07-16T02:24:39.918Z",
+    "sortNum": 20000,
+    "folders": []
+  }
+]

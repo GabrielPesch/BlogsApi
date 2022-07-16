@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "335f0deb-7e69-452c-88f8-e64141975224",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/login",
+    "url": "localhost:3000/login",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-07-16T02:25:54.343Z",
+    "modified": "2022-07-16T02:25:59.241Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"lewishamilton@gmail.com\",\n  \"password\": \"123456\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]

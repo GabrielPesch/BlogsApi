@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db:
+    container_name: blogs_api_db
+    image: mysql:8.0.21
+    platform: linux/x86_64
+    restart: always
+    ports:
+      - 3306:3306
+      - 33060:33060
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+networks:
+  default:
+    name: blogs_api_net
