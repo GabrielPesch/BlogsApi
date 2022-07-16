@@ -10,8 +10,12 @@ const authService = {
   },
 
   async readToken(token) {
-    const { data } = jwt.decode(token, secret);
+    try {
+      const { data } = jwt.verify(token, secret);
     return data;
+    } catch (error) {
+      throwUnauthorizedError('Expired or invalid token');
+    }
   },
 
 };

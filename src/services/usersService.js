@@ -14,9 +14,10 @@ const usersService = {
   },
 
   async findOrCreate(data) {
-    const [user, created] = await User.findOrCreate({
-      where: { email: data },
+    const [{ dataValues: user }, created] = await User.findOrCreate({
+      where: { email: data.email },
       raw: true,
+      defaults: data,
     });
     if (!created) serviceUtils.throwUserExists('User already registered');
     const { password: _, ...restOfUser } = user;
