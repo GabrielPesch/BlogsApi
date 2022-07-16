@@ -24,6 +24,13 @@ const usersService = {
     return restOfUser;
   },
 
+  async getAll() {
+    const users = await User.findAll({
+      attributes: { exclude: ['password'] },
+    });
+    return users;
+  },
+
   validateBodyAdd: runSchema(
     Joi.object({
       displayName: Joi.string().min(8).required().max(255),
