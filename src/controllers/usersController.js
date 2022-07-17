@@ -1,3 +1,4 @@
+const authorizationMiddleware = require('../middlewares/authorizationMiddleware');
 const authService = require('../services/authService');
 const usersService = require('../services/usersService');
 
@@ -12,8 +13,7 @@ const usersController = {
 
 /** @type {import('express').RequestHandler} */
   async getAll(req, res) {
-    const token = await authService.validateAuthorization(req.headers.authorization);
-    await authService.readToken(token);
+    await authorizationMiddleware.validate(req.headers.authorization);
     const users = await usersService.getAll();
     res.json(users);
   },

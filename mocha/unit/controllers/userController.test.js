@@ -7,6 +7,7 @@
 // const usersService = require('../../../src/services/usersService');
 // const usersController = require('../../../src/controllers/usersController');
 // const authService = require('../../../src/services/authService');
+// const authorizationMiddleware = require('../../../src/middlewares/authorizationMiddleware');
 
 // chai.use(chaiAsPromised);
 
@@ -44,27 +45,19 @@
 //   });
 
 //   describe('getAll', () => {
-//     it('Deve disparar um erro se authService.validateAuthorization disparar um erro', () => {
-//       sinon.stub(authService, 'validateAuthorization').rejects();
-//       return chai.expect(usersController.getAll({}, {})).to.eventually.be.rejected;
-//     });
-
-//     it('Deve disparar um erro se authService.readToken disparar um erro', () => {
-//       sinon.stub(authService, 'validateAuthorization').resolves();
-//       sinon.stub(authService, 'readToken').rejects();
+//     it('Deve disparar um erro se authorizationMiddleware.validate disparar um erro', () => {
+//       sinon.stub(authorizationMiddleware, 'validate').rejects();
 //       return chai.expect(usersController.getAll({}, {})).to.eventually.be.rejected;
 //     });
 
 //     it('Deve disparar um erro se usersService.getAll disparar um erro', () => {
-//       sinon.stub(authService, 'validateAuthorization').resolves();
-//       sinon.stub(authService, 'readToken').resolves();
+//       sinon.stub(authorizationMiddleware, 'validate').resolves();
 //       sinon.stub(usersService, 'getAll').rejects();
 //       return chai.expect(usersController.getAll({}, {})).to.eventually.be.rejected;
 //     });
 
 //     it('Deve retornar o token', async () => {
-//       sinon.stub(authService, 'validateAuthorization').resolves();
-//       sinon.stub(authService, 'readToken').resolves();
+//       sinon.stub(authorizationMiddleware, 'validate').resolves();
 //       sinon.stub(usersService, 'getAll').resolves([]);
 //       const res = makeRes();
 //       await usersController.getAll({headers: {authorization: ''}}, res);

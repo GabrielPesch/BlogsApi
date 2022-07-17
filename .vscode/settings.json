@@ -3,7 +3,7 @@
   "editor.detectIndentation": true,
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.fixAll.esling": true
+    "source.fixAll.eslint": true
   },
   "thunder-client.saveToWorkspace": true
 }
