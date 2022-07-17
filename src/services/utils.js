@@ -11,6 +11,12 @@ const serviceUtils = {
     throw error;
   },
 
+  throwCategoryExists(message) {
+    const error = new Error(message);
+    error.name = 'CategoryAlreadyExistsError';
+    throw error;
+  },
+
   throwUserNotFound(message) {
     const error = new Error(message);
     error.name = 'UserNotFoundError';
