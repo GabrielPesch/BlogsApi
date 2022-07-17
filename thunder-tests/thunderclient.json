@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-07-16T02:27:31.972Z",
-    "modified": "2022-07-16T02:28:16.760Z",
+    "modified": "2022-07-17T18:00:44.070Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"displayName\": \"Brett Wiltshire\",\n  \"email\": \"brett@email.com\",\n  \"password\": \"123456\",\n  \"image\": \"http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png\"\n}",
+      "raw": "{\n  \"displayName\": \"Brett Wiltshire\",\n  \"email\": \"brettaa@email.com\",\n  \"password\": \"123456\",\n  \"image\": \"http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png\"\n}",
       "form": []
     },
     "auth": {
@@ -60,6 +60,28 @@
     "params": [],
     "auth": {
       "type": "bearer"
+    },
+    "tests": []
+  },
+  {
+    "_id": "6ffc2031-959e-481e-bdb2-8d66789e1069",
+    "colId": "f714cd78-d2ab-4477-8bb1-06b935d4502e",
+    "containerId": "",
+    "name": "get",
+    "url": "localhost:3000/user/1",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-07-17T17:34:31.756Z",
+    "modified": "2022-07-17T17:42:40.070Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJkaXNwbGF5TmFtZSI6Ikxld2lzIEhhbWlsdG9uIiwiZW1haWwiOiJsZXdpc2hhbWlsdG9uQGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8xLzE4L0xld2lzX0hhbWlsdG9uXzIwMTZfTWFsYXlzaWFfMi5qcGcifSwiaWF0IjoxNjU4MDc5Njc0fQ.ril_l3aRfTrULrLoX4r4SmKXiy89JQ5hET1yxqu-qhM"
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "oauth2"
     },
     "tests": []
   }
