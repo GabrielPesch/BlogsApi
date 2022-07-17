@@ -3,6 +3,7 @@ const errors = {
   InvalidFieldsError: 400,
   TokenNotFoundError: 401,
   UnauthorizedError: 401,
+  UserNotFoundError: 404,
   UserAlreadyExistsError: 409,
 };
 

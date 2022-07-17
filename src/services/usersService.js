@@ -1,6 +1,7 @@
 const Joi = require('joi');
 const { User } = require('../database/models');
 const { runSchema } = require('../middlewares/validator');
+const { throwUserNotFound } = require('./utils');
 const serviceUtils = require('./utils');
 
 const usersService = {
@@ -31,6 +32,17 @@ const usersService = {
     return users;
   },
 
+  async findById(id) {
+    const user = await User.findByPk(id, {
+      attributes: {
+        exclude: ['password'],
+        raw: true,
+      },
+    });
+    if (!user) throwUserNotFound('User does not exist');
+    return user;
+  },
+
   validateBodyAdd: runSchema(
     Joi.object({
       displayName: Joi.string().min(8).required().max(255),
@@ -41,6 +53,12 @@ const usersService = {
       }),
       image: Joi.string().required().max(255),
     }),
+  ),
+
+  validateParamsId: runSchema(
+    Joi.object({
+      id: Joi.number().required().positive().integer(),
+    }).required(),
   ),
 };
 

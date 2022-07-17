@@ -17,6 +17,16 @@ const usersController = {
     const users = await usersService.getAll();
     res.json(users);
   },
+
+/** @type {import('express').RequestHandler} */
+  async get(req, res) {
+    const [{ id }] = await Promise.all([
+      await usersService.validateParamsId(req.params),
+      await authorizationMiddleware.validate(req.headers.authorization),
+    ]);
+    const user = await usersService.findById(id);
+    res.json(user);
+  },
 };
 
 module.exports = usersController;

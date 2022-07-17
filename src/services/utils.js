@@ -11,6 +11,12 @@ const serviceUtils = {
     throw error;
   },
 
+  throwUserNotFound(message) {
+    const error = new Error(message);
+    error.name = 'UserNotFoundError';
+    throw error;
+  },
+
   throwTokenNotFound(message) {
     const error = new Error(message);
     error.name = 'TokenNotFoundError';
