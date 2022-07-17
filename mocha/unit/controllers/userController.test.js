@@ -56,7 +56,7 @@ describe('controllers/userController', () => {
       return chai.expect(usersController.getAll({}, {})).to.eventually.be.rejected;
     });
 
-    it('Deve retornar o token', async () => {
+    it('Deve retornar a lista de Usuários', async () => {
       sinon.stub(authorizationMiddleware, 'validate').resolves();
       sinon.stub(usersService, 'getAll').resolves([]);
       const res = makeRes();

@@ -22,7 +22,7 @@
     "_id": "aa4cf7dd-d374-4e94-9e60-bc17aabdd039",
     "colId": "f714cd78-d2ab-4477-8bb1-06b935d4502e",
     "containerId": "",
-    "name": "add",
+    "name": "Create User",
     "url": "localhost:3000/user",
     "method": "POST",
     "sortNum": 10000,
@@ -45,7 +45,7 @@
     "_id": "c3b644a0-9226-4a67-b38e-87f595ba249d",
     "colId": "f714cd78-d2ab-4477-8bb1-06b935d4502e",
     "containerId": "",
-    "name": "getAll",
+    "name": "All Users",
     "url": "localhost:3000/user",
     "method": "GET",
     "sortNum": 20000,
@@ -67,7 +67,7 @@
     "_id": "6ffc2031-959e-481e-bdb2-8d66789e1069",
     "colId": "f714cd78-d2ab-4477-8bb1-06b935d4502e",
     "containerId": "",
-    "name": "get",
+    "name": "User by Id",
     "url": "localhost:3000/user/1",
     "method": "GET",
     "sortNum": 30000,
@@ -89,7 +89,7 @@
     "_id": "7c4d89e6-0880-46ff-a98c-a8c526540b2d",
     "colId": "b1c04f3d-8526-474f-b587-093410866a05",
     "containerId": "",
-    "name": "AddCategory",
+    "name": "Create category",
     "url": "localhost:3000/categories",
     "method": "POST",
     "sortNum": 10000,
@@ -107,6 +107,25 @@
       "raw": "{\n  \"name\": \"Typescript\"\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "6635a242-a08a-4cae-8042-603d05994291",
+    "colId": "b1c04f3d-8526-474f-b587-093410866a05",
+    "containerId": "",
+    "name": "All Categories",
+    "url": "localhost:3000/categories",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-07-17T19:57:19.338Z",
+    "modified": "2022-07-17T19:59:46.347Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJkaXNwbGF5TmFtZSI6Ikxld2lzIEhhbWlsdG9uIiwiZW1haWwiOiJsZXdpc2hhbWlsdG9uQGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8xLzE4L0xld2lzX0hhbWlsdG9uXzIwMTZfTWFsYXlzaWFfMi5qcGcifSwiaWF0IjoxNjU4MDc5Njc0fQ.ril_l3aRfTrULrLoX4r4SmKXiy89JQ5hET1yxqu-qhM"
+      }
+    ],
+    "params": [],
     "tests": []
   }
 ]
