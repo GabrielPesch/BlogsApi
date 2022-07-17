@@ -15,6 +15,11 @@ const categoriesService = {
     return category;
   },
 
+  async getAll() {
+    const categories = await Category.findAll();
+    return categories;
+  },
+
   validateBodyAdd: runSchema(
     Joi.object({
       name: Joi.string().required().max(255),
