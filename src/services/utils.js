@@ -17,6 +17,12 @@ const serviceUtils = {
     throw error;
   },
 
+  throwCategoryNotFound(message) {
+    const error = new Error(message);
+    error.name = 'teste';
+    throw error;
+  },
+
   throwUserNotFound(message) {
     const error = new Error(message);
     error.name = 'UserNotFoundError';

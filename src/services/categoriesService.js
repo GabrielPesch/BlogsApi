@@ -20,6 +20,12 @@ const categoriesService = {
     return categories;
   },
 
+  async checkExistsById(id) {
+    const { count } = await Category.findAndCountAll({
+      where: { id } });
+    if (count !== id.length) serviceUtils.throwCategoryNotFound('"categoryIds" not found');
+  },
+
   validateBodyAdd: runSchema(
     Joi.object({
       name: Joi.string().required().max(255),

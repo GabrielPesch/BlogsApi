@@ -19,5 +19,12 @@
     "created": "2022-07-17T19:12:05.571Z",
     "sortNum": 30000,
     "folders": []
+  },
+  {
+    "_id": "45d3d76d-19e1-40de-9406-ba8328766634",
+    "colName": "Post",
+    "created": "2022-07-17T23:06:07.470Z",
+    "sortNum": 40000,
+    "folders": []
   }
 ]
