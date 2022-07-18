@@ -1,6 +1,7 @@
 const Joi = require('joi');
 const { sequelize, BlogPost, PostCategory, User, Category } = require('../database/models');
 const { runSchema } = require('../middlewares/validator');
+const { throwPostNotFound } = require('./utils');
 
 const postsService = {
 
@@ -39,6 +40,23 @@ const postsService = {
     return posts;
   },
 
+  async findById(id) {
+    const post = await BlogPost.findByPk(id, {
+      attributes: { exclude: ['UserId'] },
+      include: [
+        { model: User, 
+          as: 'user',
+          attributes: { exclude: ['password'] }, 
+        },
+        { model: Category,
+          as: 'categories',
+          through: { attributes: [] },
+      }],
+    });
+    if (!post) throwPostNotFound('Post does not exist');
+    return post;
+  },
+
   validateBodyAdd: runSchema(
     Joi.object({
       title: Joi.string().required().max(255),
@@ -48,6 +66,12 @@ const postsService = {
       'any.required': 'Some required fields are missing',
       'string.empty': 'Some required fields are missing',
     }),
+  ),
+
+  validateParamsId: runSchema(
+    Joi.object({
+      id: Joi.number().required().positive().integer(),
+    }).required(),
   ),
 };
 

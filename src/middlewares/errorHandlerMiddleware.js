@@ -1,7 +1,8 @@
 const errors = {
   ValidationError: 400,
   InvalidFieldsError: 400,
-  teste: 400,
+  CategoryNotFoundError: 400,
+  throwPostNotFoundError: 404,
   TokenNotFoundError: 401,
   UnauthorizedError: 401,
   UserNotFoundError: 404,

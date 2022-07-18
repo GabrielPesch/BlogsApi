@@ -23,6 +23,16 @@ const postsController = {
     const posts = await postsService.getAll();
     res.json(posts);
   },
+
+  /** @type {import('express').RequestHandler} */
+  async getById(req, res) {
+    const [{ id }] = await Promise.all([
+      await postsService.validateParamsId(req.params),
+      await authorizationMiddleware.validate(req.headers.authorization),
+    ]);
+    const post = await postsService.findById(id);
+    res.json(post);
+  },
 };
 
 module.exports = postsController;

@@ -19,7 +19,7 @@ const serviceUtils = {
 
   throwCategoryNotFound(message) {
     const error = new Error(message);
-    error.name = 'teste';
+    error.name = 'CategoryNotFoundError';
     throw error;
   },
 
@@ -32,6 +32,12 @@ const serviceUtils = {
   throwTokenNotFound(message) {
     const error = new Error(message);
     error.name = 'TokenNotFoundError';
+    throw error;
+  },
+
+  throwPostNotFound(message) {
+    const error = new Error(message);
+    error.name = 'throwPostNotFoundError';
     throw error;
   },
 
