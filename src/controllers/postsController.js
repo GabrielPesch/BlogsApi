@@ -4,6 +4,7 @@ const categoriesService = require('../services/categoriesService');
 const postsService = require('../services/postsService');
 
 const postsController = {
+  /** @type {import('express').RequestHandler} */
   async add(req, res) {
     await Promise.all([
       await postsService.validateBodyAdd(req.body),
@@ -16,6 +17,12 @@ const postsController = {
     res.status(201).json(post);
   },
   
+  /** @type {import('express').RequestHandler} */
+  async getAll(req, res) {
+    await authorizationMiddleware.validate(req.headers.authorization);
+    const posts = await postsService.getAll();
+    res.json(posts);
+  },
 };
 
 module.exports = postsController;

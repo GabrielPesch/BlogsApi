@@ -151,5 +151,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "7c8c65e4-fe69-438f-8b16-fdf8d58ec0a4",
+    "colId": "45d3d76d-19e1-40de-9406-ba8328766634",
+    "containerId": "",
+    "name": "All Posts",
+    "url": "localhost:3000/post",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-07-18T20:19:17.520Z",
+    "modified": "2022-07-18T20:40:19.949Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJkaXNwbGF5TmFtZSI6Ikxld2lzIEhhbWlsdG9uIiwiZW1haWwiOiJsZXdpc2hhbWlsdG9uQGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8xLzE4L0xld2lzX0hhbWlsdG9uXzIwMTZfTWFsYXlzaWFfMi5qcGcifSwiaWF0IjoxNjU4MDc5Njc0fQ.ril_l3aRfTrULrLoX4r4SmKXiy89JQ5hET1yxqu-qhM"
+      }
+    ],
+    "params": [],
+    "tests": []
   }
 ]

@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const { sequelize, BlogPost, PostCategory } = require('../database/models');
+const { sequelize, BlogPost, PostCategory, User, Category } = require('../database/models');
 const { runSchema } = require('../middlewares/validator');
 
 const postsService = {
@@ -21,6 +21,22 @@ const postsService = {
       return post;
     });
     return result;
+  },
+
+  async getAll() {
+    const posts = await BlogPost.findAll({
+      attributes: { exclude: ['UserId'] },
+      include: [
+        { model: User, 
+          as: 'user',
+          attributes: { exclude: ['password'] }, 
+        },
+        { model: Category,
+          as: 'categories',
+          through: { attributes: [] },
+      }],
+    });
+    return posts;
   },
 
   validateBodyAdd: runSchema(
