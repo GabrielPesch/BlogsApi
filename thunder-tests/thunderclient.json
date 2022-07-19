@@ -232,5 +232,24 @@
     ],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "dfd17680-48cd-4c19-abac-2903c2e28617",
+    "colId": "f714cd78-d2ab-4477-8bb1-06b935d4502e",
+    "containerId": "",
+    "name": "delete me",
+    "url": "localhost:3000/user/me",
+    "method": "DELETE",
+    "sortNum": 40000,
+    "created": "2022-07-19T19:05:49.074Z",
+    "modified": "2022-07-19T19:06:34.029Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJkaXNwbGF5TmFtZSI6Ikxld2lzIEhhbWlsdG9uIiwiZW1haWwiOiJsZXdpc2hhbWlsdG9uQGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8xLzE4L0xld2lzX0hhbWlsdG9uXzIwMTZfTWFsYXlzaWFfMi5qcGcifSwiaWF0IjoxNjU4MjU3NTI5fQ.2XTRpQvkEBt04Me8mHggpfZ3VXmbdrv9oa2JIqmZUbg"
+      }
+    ],
+    "params": [],
+    "tests": []
   }
 ]

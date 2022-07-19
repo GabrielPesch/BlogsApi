@@ -27,6 +27,14 @@ const usersController = {
     const user = await usersService.findById(id);
     res.json(user);
   },
+
+  /** @type {import('express').RequestHandler} */
+  async remove(req, res) {
+    await authorizationMiddleware.validate(req.headers.authorization);
+    const { id } = await authService.readToken(req.headers.authorization);
+    await usersService.remove(id);
+    res.sendStatus(204);
+  },
 };
 
 module.exports = usersController;

@@ -43,6 +43,10 @@ const usersService = {
     return user;
   },
 
+  async remove(id) {
+    await User.destroy({ where: { id } });
+  },
+
   validateBodyAdd: runSchema(
     Joi.object({
       displayName: Joi.string().min(8).required().max(255),
