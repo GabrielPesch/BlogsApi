@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const { sequelize, BlogPost, PostCategory, User, Category } = require('../database/models');
 const { runSchema } = require('../middlewares/validator');
-const { throwPostNotFound } = require('./utils');
+const { throwPostNotFound, throwUnauthorizedError } = require('./utils');
 
 const postsService = {
 
@@ -57,6 +57,19 @@ const postsService = {
     return post;
   },
 
+  async checkIfIsAuthorized(id, userId) {
+    const post = await BlogPost.findByPk(id, {
+      attributes: ['userId'],
+      raw: true,
+    });
+    if (!post) throwPostNotFound('Post does not exist');
+    if (post.userId !== userId) throwUnauthorizedError('Unauthorized user');
+  },
+
+  async edit({ title, content }, id) {
+    await BlogPost.update({ title, content }, { where: { id } });
+  },
+
   validateBodyAdd: runSchema(
     Joi.object({
       title: Joi.string().required().max(255),
@@ -72,6 +85,16 @@ const postsService = {
     Joi.object({
       id: Joi.number().required().positive().integer(),
     }).required(),
+  ),
+
+  validateBodyEdit: runSchema(
+    Joi.object({
+      title: Joi.string().required().max(255),
+      content: Joi.string().required().max(255),
+    }).messages({
+      'any.required': 'Some required fields are missing',
+      'string.empty': 'Some required fields are missing',
+    }),
   ),
 };
 

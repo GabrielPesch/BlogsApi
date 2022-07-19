@@ -189,5 +189,29 @@
     ],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "690a9c2b-e273-490c-82ea-b159dc33bf6b",
+    "colId": "45d3d76d-19e1-40de-9406-ba8328766634",
+    "containerId": "",
+    "name": "Edit Post",
+    "url": "localhost:3000/post/1",
+    "method": "PUT",
+    "sortNum": 40000,
+    "created": "2022-07-18T23:50:11.505Z",
+    "modified": "2022-07-19T00:09:01.717Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJkaXNwbGF5TmFtZSI6Ikxld2lzIEhhbWlsdG9uIiwiZW1haWwiOiJsZXdpc2hhbWlsdG9uQGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8xLzE4L0xld2lzX0hhbWlsdG9uXzIwMTZfTWFsYXlzaWFfMi5qcGcifSwiaWF0IjoxNjU4MDc5Njc0fQ.ril_l3aRfTrULrLoX4r4SmKXiy89JQ5hET1yxqu-qhM"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"The whole text for the blog post goes here in this key\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

@@ -33,6 +33,20 @@ const postsController = {
     const post = await postsService.findById(id);
     res.json(post);
   },
+
+  /** @type {import('express').RequestHandler} */
+  async edit(req, res) {
+    const [{ id }] = await Promise.all([
+      await postsService.validateParamsId(req.params),
+      await postsService.validateBodyEdit(req.body),
+      await authorizationMiddleware.validate(req.headers.authorization),
+    ]);
+    const { id: userId } = await authService.readToken(req.headers.authorization);
+    await postsService.checkIfIsAuthorized(id, userId);
+    await postsService.edit(req.body, id);
+    const post = await postsService.findById(id);
+    res.json(post);
+  },
 };
 
 module.exports = postsController;
