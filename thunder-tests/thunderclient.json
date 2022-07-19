@@ -213,5 +213,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "903e9c70-0f0e-43c1-af29-c4e0898b92fa",
+    "colId": "45d3d76d-19e1-40de-9406-ba8328766634",
+    "containerId": "",
+    "name": "Remove Post",
+    "url": "localhost:3000/post/1",
+    "method": "DELETE",
+    "sortNum": 50000,
+    "created": "2022-07-19T18:27:33.082Z",
+    "modified": "2022-07-19T18:28:57.335Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJkaXNwbGF5TmFtZSI6Ikxld2lzIEhhbWlsdG9uIiwiZW1haWwiOiJsZXdpc2hhbWlsdG9uQGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8xLzE4L0xld2lzX0hhbWlsdG9uXzIwMTZfTWFsYXlzaWFfMi5qcGcifSwiaWF0IjoxNjU4MDc5Njc0fQ.ril_l3aRfTrULrLoX4r4SmKXiy89JQ5hET1yxqu-qhM"
+      }
+    ],
+    "params": [],
+    "tests": []
   }
 ]

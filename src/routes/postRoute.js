@@ -3,6 +3,7 @@ const postsController = require('../controllers/postsController');
 
 const postsRoute = Router();
 
+postsRoute.delete('/:id', postsController.remove);
 postsRoute.put('/:id', postsController.edit);
 postsRoute.get('/:id', postsController.getById);
 postsRoute.post('/', postsController.add);

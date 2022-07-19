@@ -70,6 +70,10 @@ const postsService = {
     await BlogPost.update({ title, content }, { where: { id } });
   },
 
+  async remove(id) {
+    await BlogPost.destroy({ where: { id } });
+  },
+
   validateBodyAdd: runSchema(
     Joi.object({
       title: Joi.string().required().max(255),

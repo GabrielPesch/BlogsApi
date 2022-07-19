@@ -17,10 +17,11 @@ const attributes = {
   userId: {
     allowNull: false,
     type: DataTypes.INTEGER,
+    onDelete: 'cascade',
     references: {
       model: 'Users',
       id: 'id'
-    }
+    },
   },
   published: {
     allowNull: false,

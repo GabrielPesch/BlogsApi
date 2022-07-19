@@ -9,19 +9,21 @@ module.exports = {
         primaryKey: true,
         allowNull: false,
         type: Sequelize.INTEGER,
+        onDelete: 'cascade',
         references: {
           model: 'BlogPosts',
           id: 'id'
-        }
+        },
       },
       categoryId: {
         primaryKey: true,
         allowNull: false,
         type: Sequelize.INTEGER,
+        onDelete: 'cascade',
         references: {
           model: 'Categories',
           id: 'id'
-        }
+        },
       }
     });
   },

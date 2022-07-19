@@ -47,6 +47,19 @@ const postsController = {
     const post = await postsService.findById(id);
     res.json(post);
   },
+
+  /** @type {import('express').RequestHandler} */
+  async remove(req, res) {
+    const [{ id }] = await Promise.all([
+      await postsService.validateParamsId(req.params),
+      await authorizationMiddleware.validate(req.headers.authorization),
+    ]);
+    const { id: userId } = await authService.readToken(req.headers.authorization);
+    await postsService.checkIfIsAuthorized(id, userId);
+    await postsService.remove(id);
+    res.sendStatus(204);
+  },
+  
 };
 
 module.exports = postsController;
