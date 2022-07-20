@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const { Op } = require('sequelize');
 const { sequelize, BlogPost, PostCategory, User, Category } = require('../database/models');
 const { runSchema } = require('../middlewares/validator');
 const { throwPostNotFound, throwUnauthorizedError } = require('./utils');
@@ -55,6 +56,21 @@ const postsService = {
     });
     if (!post) throwPostNotFound('Post does not exist');
     return post;
+  },
+
+  async findByQuery(query) {
+    const posts = await BlogPost.findAll({
+      attributes: { exclude: ['UserId'] },
+      include: [
+        { model: User, as: 'user', attributes: { exclude: ['password'] } },
+        { model: Category, as: 'categories', through: { attributes: [] } },
+      ],
+      where: { [Op.or]: [
+        { title: { [Op.substring]: query } },
+        { content: { [Op.substring]: query } },
+      ] },
+    });
+    return posts;
   },
 
   async checkIfIsAuthorized(id, userId) {

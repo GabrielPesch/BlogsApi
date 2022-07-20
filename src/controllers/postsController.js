@@ -60,6 +60,15 @@ const postsController = {
     res.sendStatus(204);
   },
   
+  /** @type {import('express').RequestHandler} */
+  async search(req, res) {
+    const { q: queryByName } = req.query;
+    await authorizationMiddleware.validate(req.headers.authorization);
+    const posts = queryByName
+      ? await postsService.findByQuery(queryByName)
+      : await postsService.getAll();
+    res.json(posts);
+  },
 };
 
 module.exports = postsController;

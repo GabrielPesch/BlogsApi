@@ -251,5 +251,30 @@
     ],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "9bc80d70-50f1-42e4-8ca5-902f29a8ee35",
+    "colId": "45d3d76d-19e1-40de-9406-ba8328766634",
+    "containerId": "",
+    "name": "search Post",
+    "url": "localhost:3000/post/?q=vamos",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-07-19T23:58:33.571Z",
+    "modified": "2022-07-19T23:59:38.407Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJkaXNwbGF5TmFtZSI6Ikxld2lzIEhhbWlsdG9uIiwiZW1haWwiOiJsZXdpc2hhbWlsdG9uQGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy8xLzE4L0xld2lzX0hhbWlsdG9uXzIwMTZfTWFsYXlzaWFfMi5qcGcifSwiaWF0IjoxNjU4MjU3NTI5fQ.2XTRpQvkEBt04Me8mHggpfZ3VXmbdrv9oa2JIqmZUbg"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "vamos",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
