@@ -2,4 +2,5 @@
 **/migrations/
 **/seeders/
 **/models/
-/mocha
+/__tests__/
+
