@@ -22,17 +22,11 @@
   "scripts": {
     "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
     "start": "node .",
-    "start:test": "API_PORT=3030 NODE_ENV=test npm start",
-    "kill:test": "kill -9 $(lsof -t -i:3030) &> /dev/null",
     "drop": "npx sequelize-cli db:drop",
     "seed": "npx sequelize-cli db:seed:all",
-    "pretest": "(npm run kill:test && NODE_ENV=test npm run start:test) &",
-    "test": "npx -y wait-on -t 300000 http://localhost:3030 && NODE_ENV=test jest -i --verbose --forceExit",
-    "posttest": "npm run kill:test",
-    "test-coverage": "jest -i --verbose --forceExit --coverage",
     "debug": "nodemon --watch src .",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json .",
-    "mocha": "mocha ./mocha/unit/**/*.test.js --exit",
+    "test": "mocha ./__tests__/unit/**/*.test.js --exit",
     "compose:dev": "docker-compose -f docker-compose.dev.yml down && docker-compose -f docker-compose.dev.yml up -d"
   },
   "devDependencies": {

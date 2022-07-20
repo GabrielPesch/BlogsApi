@@ -6,8 +6,6 @@ const loginRoute = require('./routes/loginRoute');
 const postsRoute = require('./routes/postRoute');
 const userRoute = require('./routes/userRoute');
 
-// ...
-
 const app = express();
 
 app.use(express.json());
@@ -18,8 +16,5 @@ app.use('/categories', categoriesRoute);
 app.use('/post', postsRoute);
 
 app.use(errorHandlerMiddleware);
-// ...
 
-// É importante exportar a constante `app`,
-// para que possa ser utilizada pelo arquivo `src/server.js`
 module.exports = app;
